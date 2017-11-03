@@ -14,7 +14,9 @@ post '/sessions' do
   end
 end
 
-delete '/sessions' do
-  session.clear
-  redirect '/'
+
+get '/logout' do
+  session[:user_id] = nil
+  redirect "/"
 end
+
