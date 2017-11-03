@@ -1,0 +1,12 @@
+<header class="session-nav">
+  <ul>
+    <a href="/">Home</a>
+    <% if logged_in? %>
+    <a href="/">Logout</a>
+    <% else %>
+    <a href="/sessions/new">Login</a>
+    <a href="/users/new">Create Account</a>
+    <% end %>
+  </ul>
+
+</header>
