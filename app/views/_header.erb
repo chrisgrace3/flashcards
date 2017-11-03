@@ -2,7 +2,8 @@
   <ul>
     <a href="/">Home</a>
     <% if logged_in? %>
-    <a href="/">Logout</a>
+    Hello, <%= current_user.first_name.capitalize %>!
+    <a href="/logout">Logout</a>
     <% else %>
     <a href="/sessions/new">Login</a>
     <a href="/users/new">Create Account</a>
