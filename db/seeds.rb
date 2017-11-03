@@ -1,9 +1,11 @@
+
+
 10.times do
   User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8, 12))
 end
 
 5.times do
-  Deck.create!(title: Faker::BackToTheFuture.quote, creator_id: rand(1..10))
+  Deck.create!(title: Faker::ProgrammingLanguage.name, creator_id: rand(1..10))
 end
 
 Card.create!(question: Faker::BackToTheFuture.quote, correct_answer_id: 1, deck_id: 1)
