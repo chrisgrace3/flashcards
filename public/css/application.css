@@ -1,5 +1,11 @@
 body {
   padding: 15px;
+  font-family: Verdana;
+  background-color: #FAF0E6;
+}
+
+h1 {
+  font-size: 3em;
 }
 
 #grid {
@@ -19,5 +25,11 @@ body {
 #deck-link {
   text-decoration: none;
   color: white;
+  font-weight: bold;
+}
+
+#header {
+  text-decoration: none;
+  color: black;
   font-weight: bold;
 }
