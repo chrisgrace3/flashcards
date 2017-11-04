@@ -18,4 +18,18 @@ class Round < ApplicationRecord
   def game_finished?
     self.get_remaining_cards.length == 0
   end
+
+    def count_first_guess
+    guesses = self.guesses.select {|guess| guess.count == 1}
+    guesses.length
+  end
+
+  def count_total_guesses
+    self.guesses.reduce(0) {|sum, guess| sum + guess.count }
+  end
+
+  def format_date
+    Time.zone = 'Central Time (US & Canada)'
+    self.created_at.in_time_zone
+  end
 end
