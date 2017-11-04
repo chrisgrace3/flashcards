@@ -1,4 +1,8 @@
-<h3>Your Results:</h3>
-<p>Deck: <%= @round.deck.title %></p>
-<p>Total Questions: <%= @round.deck.cards.count %></p>
-<p>Answered Correctly on First Try: <%= @round.correct_on_first_try %>/<%= @round.deck.cards.count %></p>
+<div class="card-display">
+  <h2>Your Results:</h2>
+  <div style="margin: auto;width: 500px;text-align: left;">
+    <p>Deck: <%= @round.deck.title %></p>
+    <p>Total Questions: <%= @round.deck.cards.count %></p>
+    <p>Answered Correctly on First Try: <%= @round.correct_on_first_try %>/<%= @round.deck.cards.count %></p>
+  </div>
+</div>
