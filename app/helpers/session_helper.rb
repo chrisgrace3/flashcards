@@ -16,9 +16,17 @@ helpers do
     current_user == user
   end
 
+  def guest_user
+    @guest_user ||= User.find_by(email: "guest@flashcards.com")
+  end
+
   def guest_user?
-    guest_user = User.find_by(email: "guest@flashcards.com")
+    # guest_user = User.find_by(email: "guest@flashcards.com")
     return current_user == guest_user if session[:user_id]
     false
+  end
+
+  def reset_guest
+    guest_user.rounds.each { |round| round.destroy }
   end
 end

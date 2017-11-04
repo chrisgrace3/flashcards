@@ -1,6 +1,6 @@
 <h2 class="current-user"><%= @user.first_name %>'s Stats</h2>
 
-  <% @user.round.each do |round| %>
+  <% @user.rounds.each do |round| %>
     <h3><%= round.deck.title %></h3>
     <table>
       <tr>
