@@ -1,4 +1,3 @@
-
 helpers do
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
@@ -16,9 +15,9 @@ helpers do
     current_user == user
   end
 
-def guest_user?
-  guest_user = User.find_by(email: "guest@flashcards.com")
-  return current_user == guest_user if session[:user_id]
-  false
-
+  def guest_user?
+    guest_user = User.find_by(email: "guest@flashcards.com")
+    return current_user == guest_user if session[:user_id]
+    false
+  end
 end

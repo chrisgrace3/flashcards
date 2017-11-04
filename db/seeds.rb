@@ -1,4 +1,3 @@
-
 User.create!(first_name: "guest", last_name: "user", email: "guest@flashcards.com", password: "guest123")
 
 
