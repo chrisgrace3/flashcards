@@ -1,4 +1,6 @@
 
+User.create!(first_name: "guest", last_name: "user", email: "guest@flashcards.com", password: "guest123")
+
 
 10.times do
   User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.safe_email, password: Faker::Internet.password(8, 12))
