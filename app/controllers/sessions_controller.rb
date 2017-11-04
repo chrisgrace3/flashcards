@@ -1,4 +1,5 @@
 get '/sessions/new' do
+  @user = User.new
   erb :"sessions/new"
 end
 

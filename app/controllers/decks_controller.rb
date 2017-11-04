@@ -5,11 +5,13 @@ end
 
 get '/decks/new' do
   authenticate!
+  @deck = Deck.new
   erb :'/decks/new'
 end
 
 get '/decks/:id' do
   @deck = Deck.find(params[:id])
+
   if params[:correct] == "true"
     @correct = true
     @message = "That was correct! Nice job!"
@@ -43,6 +45,9 @@ post '/decks' do
   @deck.creator = current_user
   if @deck.save
     redirect "/decks/#{@deck.id}/cards/new"
+  else
+    @errors = @deck.errors.full_messages
+    erb :'/decks/new'
   end
 end
 

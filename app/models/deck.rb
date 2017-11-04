@@ -4,4 +4,5 @@ class Deck < ApplicationRecord
   has_many :rounds
 
   validates_uniqueness_of :title
+  validates :title, presence: true
 end

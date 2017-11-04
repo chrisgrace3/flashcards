@@ -1,4 +1,5 @@
 get '/cards/new' do
+  authenticate!
   erb :'/cards/new'
 end
 

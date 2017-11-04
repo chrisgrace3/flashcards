@@ -1,9 +1,18 @@
 <div class="deck-display">
-  <h3>what's the name of your deck?</h3>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <ul>
+        <li class="message"><em><%= error %></em></li>
+      </ul>
+    <% end %>
+  <% end %>
+  <h2>Coming soon!</h2>
+  <p><a href="/"><u>Go back</u></a></p>
+  <!-- <h3>what's the title of your deck?</h3>
   <div class="new-deck-form">
     <form method="POST" action="/decks">
       <input type="text" name="deck[title]">
-      <input type="submit" value="Submit">
+      &nbsp;<input type="submit" value="Submit">
   </form>
-  <br>
+  <br> -->
 </div>
