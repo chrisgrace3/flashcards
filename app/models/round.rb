@@ -18,4 +18,16 @@ class Round < ApplicationRecord
   def game_finished?
     self.get_remaining_cards.length == 0
   end
+
+  def correct_on_first_try
+    first_try = 0
+    self.deck.cards.each do |card|
+      num_guesses = card.guesses.where(round_id: self.id)
+      if num_guesses.length == 1
+        first_try += 1
+      end
+    end
+    first_try
+  end
+
 end

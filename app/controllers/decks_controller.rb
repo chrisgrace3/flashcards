@@ -21,17 +21,17 @@ get '/decks/:id' do
   end
 
   if params[:first_time]
-    round = Round.create(player_id: session[:user_id], deck_id: @deck.id)
-    session[:round_id] = round.id
+    @round = Round.create(player_id: session[:user_id], deck_id: @deck.id)
+    session[:round_id] = @round.id
     @card = @deck.cards.sample
   else
-    round = Round.find(session[:round_id])
-    unless round.game_finished?
-      @card = round.draw_card
+    @round = Round.find(session[:round_id])
+    unless @round.game_finished?
+      @card = @round.draw_card
     end
   end
 
-  if round.game_finished?
+  if @round.game_finished?
     erb :'rounds/results'
   else
     erb :'decks/show'

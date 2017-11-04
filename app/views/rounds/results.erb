@@ -1,1 +1,4 @@
-Results Go Here
+<h3>Your Results:</h3>
+<p>Deck: <%= @round.deck.title %></p>
+<p>Total Questions: <%= @round.deck.cards.count %></p>
+<p>Answered Correctly on First Try: <%= @round.correct_on_first_try %>/<%= @round.deck.cards.count %></p>
