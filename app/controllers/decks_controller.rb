@@ -9,6 +9,8 @@ get '/decks/new' do
   erb :'/decks/new'
 end
 
+
+
 get '/decks/:id' do
   @deck = Deck.find(params[:id])
 
@@ -23,6 +25,7 @@ get '/decks/:id' do
   end
 
   if params[:first_time]
+    reset_guest
     @round = Round.create(player_id: session[:user_id], deck_id: @deck.id)
     session[:round_id] = @round.id
     @card = @deck.cards.sample
@@ -39,6 +42,8 @@ get '/decks/:id' do
     erb :'decks/show'
   end
 end
+
+
 
 post '/decks' do
   @deck = Deck.new(params[:deck])
