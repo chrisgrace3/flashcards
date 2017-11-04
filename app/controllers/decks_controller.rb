@@ -10,8 +10,14 @@ end
 
 get '/decks/:id' do
   @deck = Deck.find(params[:id])
-  if !params[:correct]
-    @message = "That was incorrect!"
+  if params[:correct] == "true"
+    @correct = true
+    @message = "That was correct! Nice job!"
+  elsif params[:correct] == "false"
+    @correct = false
+    @card = Card.find(params[:card])
+    @message = "Sorry, that was incorrect."
+    @answer = "The correct answer is '#{ @card.correct_answer.answer }'."
   end
 
   if params[:first_time]

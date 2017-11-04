@@ -1,9 +1,16 @@
 <div class="card-display">
   <h3>Category: <%= @deck.title %></h3><hr>
-  <h2><%= @card.question %></h2><br>
   <% if @message %>
-  <%=  %>
+  <% if @correct %>
+  <span style="color: green;">
+  <% else %>
+  <span style="color: red;">
   <% end %>
+  <%= @message %>
+  <%= @answer %>
+  </span>
+  <% end %>
+  <h2><%= @card.question %></h2><br>
 
     <form method='post' action='/guesses'>
       <ul>
