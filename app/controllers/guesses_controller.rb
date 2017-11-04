@@ -7,5 +7,5 @@ post '/guesses' do
   else
     Guess.create(round_id: session[:round_id], card_id: @card.id, answered_correctly: false)
   end
-  redirect 'decks/#{@card.deck.id}'
+  redirect "decks/#{@card.deck.id}"
 end

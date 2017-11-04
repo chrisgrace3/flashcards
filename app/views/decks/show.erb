@@ -1,5 +1,17 @@
 <div class="card-display">
-  <h3><%= @deck.title %></h3>
+  <h3>Category: <%= @deck.title %></h3><hr>
+  <h2><%= @card.question %></h2><br>
+
+    <form method='post' action='/guesses'>
+      <ul>
+        <% @card.possible_answers.each do |answer| %>
+        <li class="possible-answer"> <input name="user_guess" type="radio" value="<%= answer.answer %>"> &nbsp;<%= answer.answer %></li>
+        <% end %>
+      </ul>
+      <input type="hidden" name="card_id" value="<%= @card.id %>">
+      <input type="submit" value="Submit"><br><br>
+    <form>
 </div>
+
 
 <!-- Pass in the card_id when submitting the post request -->

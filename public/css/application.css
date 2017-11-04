@@ -51,10 +51,18 @@ h1 {
   width: 500px;
 }
 
+.answer-link {
+  color: #5F9F9F;
+}
+
 .message {
   color: #CD0000;
   font-size: 1.2em;
+}
 
+.possible-answer {
+  margin-bottom: 10px;
+  text-align: left;
 }
 
 ul {
@@ -82,4 +90,12 @@ a {
   position: fixed;
   top: 0;
   right: 5%;
+}
+
+footer {
+  text-align: center;
+  font-size: .8em;
+  position: absolute;
+  bottom:5px;
+  width: 100%;
 }

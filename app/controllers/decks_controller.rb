@@ -17,7 +17,7 @@ get '/decks/:id' do
     @card = @deck.cards.sample
   else
     round = Round.find(session[:round_id])
-    unless game_finished?
+    unless round.game_finished?
       @card = round.draw_card
     end
   end

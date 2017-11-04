@@ -4,5 +4,5 @@ end
 
 post '/cards' do
   @card = Card.find(params[:id])
-  redirect '/'
+  redirect "/decks/#{@card.deck.id}"
 end
