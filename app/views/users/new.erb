@@ -1,25 +1,28 @@
-<h1>User NEW</h1>
-
 <center>
+  <h2>Register:</h2>
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <ul>
+        <li><span class="message"><em><%= error %></em></span></li>
+      </ul>
+    <% end %>
+  <% end %>
+
   <div class="new-user">
     <form method="POST" action="/users">
-      <label>First Name:</label>
-      <br>
       <input type="text" name="user[first_name]" placeholder="First Name">
       <br>
-       <label>Last Name:</label>
       <br>
       <input type="text" name="user[last_name]" placeholder="Last Name">
       <br>
-      <label>Email:</label>
       <br>
       <input type="text" name="user[email]" placeholder="Email">
       <br>
-      <label>Password:</label>
       <br>
       <input type="password" name="user[password]" placeholder="Password">
-      <br>
-      <input type="submit" value="Register Account">
+      <br><br>
+      <input type="submit" value="Create Account">
     </form>
   </div>
 </center>

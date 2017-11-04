@@ -24,7 +24,7 @@ h1 {
   grid-gap: 10px;
 }
 #grid > div {
-  background-color: #CD0000;
+  background-color: #660000;
   color: white;
   font-size: 1.2em;
   padding: 10px;
@@ -32,13 +32,43 @@ h1 {
   height: 50px;
   line-height: 50px;
   text-align: center;
+}
 
+.new-deck-label {
+  text-align: left;
+}
+
+.new-deck-form {
+  margin: auto;
+  width: 250px;
+  text-align: left;
+}
+
+.deck-display {
+  background-color: white;
+  border: 3px solid black;
+  margin: auto;
+  width: 500px;
+}
+
+.message {
+  color: #330000;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 #deck-link {
-  text-decoration: none;
-  color: white;
   font-weight: bold;
+  color: white;
   font-size: 1.2em;
 }
 
@@ -46,4 +76,10 @@ h1 {
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+
+.session-nav {
+  position: fixed;
+  top: 0;
+  right: 5%;
 }

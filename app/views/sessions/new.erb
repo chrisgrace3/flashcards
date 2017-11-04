@@ -1,22 +1,19 @@
-<h1>Sessions NEW</h1>
-
 <center>
-  <h2>Login</h2>
+  <h2>Log In</h2>
+  <% if @message %>
+    <span class="message"><em><%= @message %></em></span>
+  <br><br>
+  <% end %>
 
 <div class="login">
   <form method="POST" action="/sessions">
-    <label>Email: </label>
+    <input type="email" name="email" placeholder="Email">
     <br>
-    <input type="text" name="email" placeholder="Email">
-    <br>
-    <br>
-    <label>Password: </label>
     <br>
     <input type="password" name="password" placeholder="Password">
     <br>
     <br>
-    <input type="submit" value="Login">
-
+    <input type="submit" value="Submit">
   </form>
 </div>
 </center>

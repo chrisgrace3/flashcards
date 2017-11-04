@@ -30,7 +30,7 @@ class User < ApplicationRecord
     if @raw_password.length == 0
       errors.add(:password, "is required")
     elsif
-      @raw_password.length < 8
+      @raw_password.length < 6
       errors.add(:password, "must be at least 8 characters")
     end
   end

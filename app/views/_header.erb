@@ -1,12 +1,12 @@
 <header class="session-nav">
   <ul>
-    <a href="/">Home</a>
     <% if logged_in? %>
-    Hello, <%= current_user.first_name.capitalize %>!
-    <a href="/logout">Logout</a>
+    Hello, <%= current_user.first_name.capitalize %>! | <u><a href="/decks/new">Create New Deck</a></u> |
+    <a href="/logout"><u>Logout</u></a>
+
     <% else %>
-    <a href="/sessions/new">Login</a>
-    <a href="/users/new">Create Account</a>
+      <a href="/sessions/new">Login</a> |
+      <a href="/users/new">Create Account</a>
     <% end %>
   </ul>
 
