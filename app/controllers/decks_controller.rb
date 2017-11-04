@@ -22,7 +22,7 @@ get '/decks/:id' do
     end
   end
 
-  if game_finished?
+  if round.game_finished?
     erb :'rounds/results'
   else
     erb :'decks/show'
