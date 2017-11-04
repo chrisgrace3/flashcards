@@ -1,11 +1,9 @@
-<center>
+<div class="deck-display">
   <h2>Register:</h2>
 
   <% if @errors %>
     <% @errors.each do |error| %>
-      <ul>
-        <li><span class="message"><em><%= error %></em></span></li>
-      </ul>
+        <p class="message"><em><%= error %></em></p>
     <% end %>
   <% end %>
 
@@ -24,5 +22,6 @@
       <br><br>
       <input type="submit" value="Create Account">
     </form>
+    <br>
   </div>
-</center>
+</div>

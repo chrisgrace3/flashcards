@@ -1,0 +1,13 @@
+<div class="deck-display">
+  <h2>Create your first question:</h2>
+  <form method="post" action="/cards">
+    <input type="text" placeholder="Question" name="question" required><br><br>
+    <input type="text" placeholder="CORRECT Answer" name="possibleanswer[correct]" required><br><br>
+    <input type="text" placeholder="Wrong Answer" name="possibleanswer[wrong1]" required><br><br>
+    <input type="text" placeholder=" Wrong Answer" name="possibleanswer[wrong2]"><br><br>
+    <input type="text" placeholder=" Wrong Answer" name="possibleanswer[wrong1]"><br><br>
+    <input type="submit" value="Submit">
+    <input type="hidden" value="<%  %>">
+  </form>
+  <br>
+</div>

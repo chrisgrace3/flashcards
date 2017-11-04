@@ -1,19 +1,23 @@
 <center>
+  <div class="deck-display">
+
   <h2>Log In</h2>
   <% if @message %>
     <span class="message"><em><%= @message %></em></span>
   <br><br>
   <% end %>
 
-<div class="login">
-  <form method="POST" action="/sessions">
-    <input type="email" name="email" placeholder="Email">
+  <div class="login">
+    <form method="POST" action="/sessions">
+      <input type="email" name="email" placeholder="Email">
+      <br>
+      <br>
+      <input type="password" name="password" placeholder="Password">
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
     <br>
-    <br>
-    <input type="password" name="password" placeholder="Password">
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+  </div>
 </div>
 </center>

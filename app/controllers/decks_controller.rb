@@ -4,6 +4,7 @@ get '/decks' do
 end
 
 get '/decks/new' do
+  authenticate!
   erb :'/decks/new'
 end
 
@@ -16,7 +17,16 @@ post '/decks' do
   @deck = Deck.new(params[:deck])
   @deck.creator = current_user
   if @deck.save
-    redirect :'/'
+    redirect "/decks/#{@deck.id}/cards/new"
   end
 end
 
+get '/decks/:deck_id/cards/new' do
+  @deck = Deck.find(params[:deck_id])
+  authenticate!
+  erb :'/cards/new'
+end
+
+post '/decks/:deck_id/cards' do
+  '/'
+end
