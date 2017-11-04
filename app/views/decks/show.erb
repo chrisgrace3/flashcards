@@ -1,6 +1,9 @@
 <div class="card-display">
   <h3>Category: <%= @deck.title %></h3><hr>
   <h2><%= @card.question %></h2><br>
+  <% if @message %>
+  <%=  %>
+  <% end %>
 
     <form method='post' action='/guesses'>
       <ul>
@@ -12,6 +15,3 @@
       <input type="submit" value="Submit"><br><br>
     <form>
 </div>
-
-
-<!-- Pass in the card_id when submitting the post request -->

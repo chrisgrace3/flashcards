@@ -10,6 +10,9 @@ end
 
 get '/decks/:id' do
   @deck = Deck.find(params[:id])
+  if !params[:correct]
+    @message = "That was incorrect!"
+  end
 
   if params[:first_time]
     round = Round.create(player_id: session[:user_id], deck_id: @deck.id)
