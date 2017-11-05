@@ -21,7 +21,7 @@ get '/decks/:id' do
     @correct = false
     @card = Card.find(params[:card])
     @message = "Sorry, that was incorrect."
-    @answer = "The correct answer is '#{ @card.correct_answer.answer }'."
+    @answer = "The correct answer was '#{ @card.correct_answer.answer }'."
   end
 
   if params[:first_time]
@@ -61,4 +61,3 @@ get '/decks/:deck_id/cards/new' do
   authenticate!
   erb :'/cards/new'
 end
-
