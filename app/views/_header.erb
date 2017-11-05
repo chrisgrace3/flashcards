@@ -1,6 +1,6 @@
 <header class="session-nav">
   <ul>
-    <% if logged_in? %>
+    <% if logged_in? && !guest_user? %>
     Hello, <a href="/users/<%= current_user.id %>"><u><%= current_user.first_name.capitalize %></u></a>! | <u><a href="/decks/new">Create New Deck</a></u> |
     <a href="/logout"><u>Logout</u></a>
 

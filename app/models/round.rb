@@ -30,4 +30,9 @@ class Round < ApplicationRecord
     first_try
   end
 
+  def formatted_date
+    d = Date.parse(self.created_at.utc.to_s)
+    d.strftime('%d %b %Y')
+  end
+
 end

@@ -4,7 +4,6 @@ helpers do
   end
 
   def logged_in?
-    # session[:user_id] != nil
     !!current_user
   end
 
@@ -21,7 +20,6 @@ helpers do
   end
 
   def guest_user?
-    # guest_user = User.find_by(email: "guest@flashcards.com")
     return current_user == guest_user if session[:user_id]
     false
   end

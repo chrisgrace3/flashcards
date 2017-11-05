@@ -1,19 +1,10 @@
 <h2 class="current-user"><%= @user.first_name %>'s Stats</h2>
 
-  <% @user.rounds.each do |round| %>
-    <h3><%= round.deck.title %></h3>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Cards in Deck</th>
-        <th>First Guess Correct</th>
-        <th>Total Guesses</th>
-      </tr>
-      <tr>
-        <th><%= round.format_date %></th>
-        <th><%= round.deck.cards.count %></th>
-        <th><%= round.count_first_guess %></th>
-        <th><%= round.count_total_guesses %></th>
-      </tr>
-    </table>
+  <% @user.rounds.order(created_at: :desc).each do |round| %>
+    <div class="card-display">
+      <p>Deck: <%= round.deck.title %></p>
+      <p>Date Played: <%= round.formatted_date %></p>
+      <p>Total Questions: <%= round.deck.cards.count %></p>
+      <p>Answered Correctly on First Try: <%= round.correct_on_first_try %>/<%= round.deck.cards.count %></p>
+    </div><br>
   <% end %>
