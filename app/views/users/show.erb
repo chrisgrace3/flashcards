@@ -1,4 +1,4 @@
-<h2 class="current-user"><%= @user.first_name %>'s Stats</h2>
+<h2 class="current-user"><%= @user.first_name.capitalize %>'s Stats</h2>
 
   <% @user.rounds.order(created_at: :desc).each do |round| %>
     <div style="width: 500px;text-align: left;padding-left: 10px;" class="card-display">

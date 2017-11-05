@@ -95,7 +95,7 @@ a {
 footer {
   text-align: center;
   font-size: .8em;
-  position: absolute;
+  /*position: fixed;*/
   bottom:5px;
   width: 100%;
 }
